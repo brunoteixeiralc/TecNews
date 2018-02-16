@@ -75,4 +75,11 @@ extension ArticleListController {
     cell.render(article: NewsAPI.service.articles[indexPath.row], using: formatter)
     return cell
   }
+    
+   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+    if let url = URL(string: NewsAPI.service.articles[indexPath.row].sourceURL.absoluteString) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
 }
