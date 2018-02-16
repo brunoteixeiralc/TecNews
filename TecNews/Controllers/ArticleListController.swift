@@ -43,6 +43,9 @@ class ArticleListController: UITableViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
+    tableView.estimatedRowHeight = 450
+    tableView.rowHeight = UITableViewAutomaticDimension
+    
     guard let source = source else { return }
     token = NewsAPI.service.observe(\.articles) { _, _ in
       DispatchQueue.main.async {

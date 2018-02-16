@@ -33,9 +33,15 @@ import UIKit
 class SourceListController: UITableViewController {
   
   private var token: NSKeyValueObservation?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.isNavigationBarHidden = false
+    }
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.navigationItem.setHidesBackButton(true, animated:true);
     token = NewsAPI.service.observe(\.sources) { _, _ in
       DispatchQueue.main.async {
         self.tableView.reloadData()
