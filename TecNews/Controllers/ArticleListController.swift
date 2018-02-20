@@ -48,10 +48,12 @@ class ArticleListController: UITableViewController {
     tableView.estimatedRowHeight = 450
     tableView.rowHeight = UITableViewAutomaticDimension
     
+    Utils.showDialog(in: self)
     guard let source = source else { return }
     token = NewsAPI.service.observe(\.articles) { _, _ in
       DispatchQueue.main.async {
         self.tableView.reloadData()
+        Utils.dismissDialog(in: self)
       }
     }
     NewsAPI.service.fetchArticles(for: source)

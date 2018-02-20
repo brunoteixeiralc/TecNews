@@ -23,6 +23,7 @@
 		F497F6C12036393800D251D5 /* launchScreen.json in Resources */ = {isa = PBXBuildFile; fileRef = F497F6C02036393800D251D5 /* launchScreen.json */; };
 		F497F6C320365E2A00D251D5 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F497F6C220365E2900D251D5 /* .gitignore */; };
 		F497F6C8203B9D6000D251D5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F497F6CA203B9D6000D251D5 /* Localizable.strings */; };
+		F497F6CF203BBC8200D251D5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F497F6CE203BBC8200D251D5 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		F497F6CB203B9D6500D251D5 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F497F6CC203B9D6600D251D5 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F497F6CD203B9D8B00D251D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F497F6CE203BBC8200D251D5 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				7B4950121F3B478800C5133B /* AppDelegate.swift */,
+				F497F6CE203BBC8200D251D5 /* Utils.swift */,
 				F497F6C02036393800D251D5 /* launchScreen.json */,
 				7B49501E1F3B478800C5133B /* Info.plist */,
 			);
@@ -325,6 +328,7 @@
 				7B49502B1F3B49FD00C5133B /* Article.swift in Sources */,
 				7BBBCD901F3C4F9F006D87F7 /* ArticleCell.swift in Sources */,
 				F497F6BF203632C100D251D5 /* LaunchViewController.swift in Sources */,
+				F497F6CF203BBC8200D251D5 /* Utils.swift in Sources */,
 				7B4950341F3B52FE00C5133B /* SourceCell.swift in Sources */,
 				7BBBCD8E1F3C4EF5006D87F7 /* String.swift in Sources */,
 				7B49502E1F3B4A7300C5133B /* NewsAPI.swift in Sources */,

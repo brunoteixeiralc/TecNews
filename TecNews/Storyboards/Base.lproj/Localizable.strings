@@ -7,3 +7,6 @@
 */
 /* Localized kind: Language */
 "language" = "en";
+
+/* Localized kind: Loading */
+"loading" = "Loading...";

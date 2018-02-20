@@ -42,9 +42,11 @@ class SourceListController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.navigationItem.setHidesBackButton(true, animated:true);
+    Utils.showDialog(in: self)
     token = NewsAPI.service.observe(\.sources) { _, _ in
       DispatchQueue.main.async {
         self.tableView.reloadData()
+        Utils.dismissDialog(in: self)
       }
     }
     NewsAPI.service.fetchSources()
@@ -72,4 +74,5 @@ extension SourceListController {
     cell.source = NewsAPI.service.sources[indexPath.row]
     return cell
   }
+    
 }
