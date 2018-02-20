@@ -94,8 +94,26 @@ extension ArticleListController {
    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     if let url = URL(string: NewsAPI.service.articles[indexPath.row].sourceURL.absoluteString) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+           UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let article = NewsAPI.service.articles[indexPath.row]
+        
+        let shareAction = UIContextualAction(style: .normal, title: "SHARE") { [weak self] (action, view, completionHandler) in
+            guard let `self` = self else{
+                completionHandler(false)
+                return
+            }
+            completionHandler(true)
+        }
+        
+       shareAction.backgroundColor = #colorLiteral(red: 0.1725490196, green: 0.2431372549, blue: 0.3137254902, alpha: 1)
+       let configuration = UISwipeActionsConfiguration(actions: [shareAction])
+       return configuration
+        
     }
 }
 
