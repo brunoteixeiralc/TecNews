@@ -39,11 +39,13 @@ class ArticleCell: UITableViewCell {
   private var task: URLSessionDataTask?
   
   func render(article: Article, using formatter: DateFormatter) {
-    if let imageURL = article.imageURL{
-       downloadBanner(from: imageURL)
-    }else{
-        self.bannerView.image = nil
+
+    if let image = article.image{
+        self.bannerView.image = image
+    }else if let imageURL = article.imageURL{
+        downloadBanner(from: imageURL)
     }
+    
     if let published = article.published {
       publishedLabel.text = formatter.string(from: published)
     } else {
@@ -51,6 +53,7 @@ class ArticleCell: UITableViewCell {
     }
     titleLabel.text = article.title
     snippetLabel.text = article.snippet
+    
   }
   
   override func prepareForReuse() {

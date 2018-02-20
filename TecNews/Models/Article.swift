@@ -29,6 +29,7 @@
  */
 
 import Foundation
+import UIKit
 
 class Article: NSObject, Codable {
   let author: String?
@@ -37,7 +38,8 @@ class Article: NSObject, Codable {
   let sourceURL: URL
   let imageURL: URL?
   let published: Date?
-  
+  var image: UIImage? = nil
+    
   enum CodingKeys: String, CodingKey {
     case author
     case title
@@ -47,7 +49,7 @@ class Article: NSObject, Codable {
     case published = "publishedAt"
   }
   
-  init(author: String, title: String, snippet: String, sourceURL: URL, imageURL: URL, published: Date) {
+    init(author: String, title: String, snippet: String, sourceURL: URL, imageURL: URL, published: Date) {
     self.author = author
     self.title = title
     self.snippet = snippet
@@ -65,5 +67,6 @@ class Article: NSObject, Codable {
     sourceURL = try container.decode(URL.self, forKey: .sourceURL)
     imageURL = try container.decodeIfPresent(URL.self, forKey: .imageURL)
     published = try container.decodeIfPresent(Date.self, forKey: .published)
+    
   }
 }

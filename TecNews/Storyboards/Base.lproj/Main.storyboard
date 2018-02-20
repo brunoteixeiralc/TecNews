@@ -104,7 +104,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="288.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MDd-IV-s1K">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MDd-IV-s1K">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="187.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="MDd-IV-s1K" secondAttribute="height" multiplier="2:1" id="eGQ-Xp-eoc"/>

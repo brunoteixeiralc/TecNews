@@ -35,10 +35,12 @@ class ArticleListController: UITableViewController {
   var source: Source?
   private var token: NSKeyValueObservation?
   private let formatter = DateFormatter()
+    private var task: URLSessionDataTask?
   
   override func viewDidLoad() {
     super.viewDidLoad()
     formatter.dateFormat = "MMM d, h:mm a"
+    tableView.prefetchDataSource = self
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -72,7 +74,18 @@ extension ArticleListController {
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleCell
+    
+    if let imageView = cell.viewWithTag(100) as? UIImageView {
+        if let image = NewsAPI.service.articles[indexPath.row].image {
+            imageView.image = image
+        } else {
+            imageView.image = nil
+            self.downloadBanner(forItemAtIndex: indexPath.row)
+        }
+    }
+    
     cell.render(article: NewsAPI.service.articles[indexPath.row], using: formatter)
+    
     return cell
   }
     
@@ -81,5 +94,40 @@ extension ArticleListController {
     if let url = URL(string: NewsAPI.service.articles[indexPath.row].sourceURL.absoluteString) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
+    }
+}
+
+extension ArticleListController{
+    
+    private func downloadBanner(forItemAtIndex index: Int) {
+        if let imageUrl = NewsAPI.service.articles[index].imageURL{
+            let task = URLSession.shared.dataTask(with: imageUrl) { data, response, error in
+                guard let data = data, error == nil else { return }
+                DispatchQueue.main.async {
+                     let indexPath = IndexPath(row: index, section: 0)
+                     if self.tableView.indexPathsForVisibleRows?.contains(indexPath) ?? false {
+                        NewsAPI.service.articles[index].image = UIImage(data: data)
+                    }
+                }
+            }
+            task.resume()
+            self.task = task
+        }
+    }
+    
+    private func cancelDownloadBanner(forItemAtIndex index: Int){
+        guard let task = task else { return }
+        task.cancel()
+    }
+}
+
+extension ArticleListController: UITableViewDataSourcePrefetching {
+    
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        indexPaths.forEach { self.downloadBanner(forItemAtIndex: $0.row) }
+    }
+    
+    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
+        indexPaths.forEach { self.cancelDownloadBanner(forItemAtIndex: $0.row) }
     }
 }

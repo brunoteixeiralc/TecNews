@@ -60,7 +60,7 @@ class NewsAPI: NSObject {
       case .sources:
         return URL(string: "\(API.basePath)/sources?language=\(NSLocalizedString("language", comment: "Localized kind: Language"))&apiKey=\(API.key)")!
       case .articles(let source):
-        return URL(string: "\(API.basePath)/top-headlines?sources=\(source.id)&apiKey=\(API.key)")!
+        return URL(string: "\(API.basePath)/top-headlines?sources=\(source.id)&pageSize=100&apiKey=\(API.key)")!
       }
     }
   }
