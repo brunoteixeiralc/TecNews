@@ -35,18 +35,27 @@ class ArticleListController: UITableViewController {
   var source: Source?
   private var token: NSKeyValueObservation?
   private let formatter = DateFormatter()
-    private var task: URLSessionDataTask?
+  private var task: URLSessionDataTask?
+  private var searchController = UISearchController(searchResultsController: nil)
   
   override func viewDidLoad() {
     super.viewDidLoad()
     formatter.dateFormat = "MMM d, h:mm a"
     tableView.prefetchDataSource = self
+    
+    tableView.estimatedRowHeight = 450
+    tableView.rowHeight = UITableViewAutomaticDimension
+    
+    refreshControl = UIRefreshControl()
+    refreshControl?.tintColor = UIColor.white
+    refreshControl?.addTarget(self, action: #selector(searchArticleRC), for: .valueChanged)
+    
+    navigationItem.searchController = searchController
+    navigationItem.hidesSearchBarWhenScrolling = true
   }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    tableView.estimatedRowHeight = 450
-    tableView.rowHeight = UITableViewAutomaticDimension
     
     Utils.showDialog(in: self)
     guard let source = source else { return }
@@ -57,10 +66,7 @@ class ArticleListController: UITableViewController {
       }
     }
     NewsAPI.service.fetchArticles(for: source)
-    
-    refreshControl = UIRefreshControl()
-    refreshControl?.tintColor = UIColor.white
-    refreshControl?.addTarget(self, action: #selector(searchArticleRC), for: .valueChanged)
+
   }
   
   override func viewDidDisappear(_ animated: Bool) {

@@ -33,6 +33,7 @@ import UIKit
 class SourceListController: UITableViewController {
   
   private var token: NSKeyValueObservation?
+  private var searchController = UISearchController(searchResultsController: nil)
     
   override func viewWillAppear(_ animated: Bool) {
      super.viewWillAppear(true)
@@ -41,6 +42,7 @@ class SourceListController: UITableViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     self.navigationItem.setHidesBackButton(true, animated:true);
     Utils.showDialog(in:self)
     token = NewsAPI.service.observe(\.sources) { _, _ in
@@ -54,6 +56,9 @@ class SourceListController: UITableViewController {
     refreshControl = UIRefreshControl()
     refreshControl?.tintColor = UIColor.white
     refreshControl?.addTarget(self, action: #selector(searchSourceRC), for: .valueChanged)
+    
+    navigationItem.searchController = searchController
+    navigationItem.hidesSearchBarWhenScrolling = true
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
