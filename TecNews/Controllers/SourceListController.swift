@@ -34,15 +34,15 @@ class SourceListController: UITableViewController {
   
   private var token: NSKeyValueObservation?
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        self.navigationController?.isNavigationBarHidden = false
-    }
+  override func viewWillAppear(_ animated: Bool) {
+     super.viewWillAppear(true)
+     self.navigationController?.isNavigationBarHidden = false
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     self.navigationItem.setHidesBackButton(true, animated:true);
-    Utils.showDialog(in: self)
+    Utils.showDialog(in:self)
     token = NewsAPI.service.observe(\.sources) { _, _ in
       DispatchQueue.main.async {
         self.tableView.reloadData()
@@ -50,6 +50,10 @@ class SourceListController: UITableViewController {
       }
     }
     NewsAPI.service.fetchSources()
+    
+    refreshControl = UIRefreshControl()
+    refreshControl?.tintColor = UIColor.white
+    refreshControl?.addTarget(self, action: #selector(searchSourceRC), for: .valueChanged)
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -59,6 +63,16 @@ class SourceListController: UITableViewController {
       else { return }
     destination.source = NewsAPI.service.sources[indexPath.row]
   }
+    
+    @objc func searchSourceRC(){
+        token = NewsAPI.service.observe(\.sources) { _, _ in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.refreshControl?.endRefreshing()
+            }
+        }
+        NewsAPI.service.fetchSources()
+    }
 }
 
 // MARK: UITableViewDataSource

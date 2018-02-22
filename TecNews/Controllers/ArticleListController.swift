@@ -57,6 +57,10 @@ class ArticleListController: UITableViewController {
       }
     }
     NewsAPI.service.fetchArticles(for: source)
+    
+    refreshControl = UIRefreshControl()
+    refreshControl?.tintColor = UIColor.white
+    refreshControl?.addTarget(self, action: #selector(searchArticleRC), for: .valueChanged)
   }
   
   override func viewDidDisappear(_ animated: Bool) {
@@ -64,6 +68,16 @@ class ArticleListController: UITableViewController {
     token?.invalidate()
     NewsAPI.service.resetArticles()
   }
+    
+    @objc func searchArticleRC(){
+        token = NewsAPI.service.observe(\.articles) { _, _ in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.refreshControl?.endRefreshing()
+            }
+        }
+        NewsAPI.service.fetchArticles(for: source!)
+    }
 }
 
 // MARK: UITableViewDataSource
