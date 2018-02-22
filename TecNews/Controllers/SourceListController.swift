@@ -44,11 +44,11 @@ class SourceListController: UITableViewController {
     super.viewDidLoad()
     
     self.navigationItem.setHidesBackButton(true, animated:true);
-    Utils.showDialog(in:self)
+    showDialog(in:self)
     token = NewsAPI.service.observe(\.sources) { _, _ in
       DispatchQueue.main.async {
         self.tableView.reloadData()
-        Utils.dismissDialog(in: self)
+        dismissDialog(in: self)
       }
     }
     NewsAPI.service.fetchSources()

@@ -37,6 +37,7 @@ class ArticleListController: UITableViewController {
   private let formatter = DateFormatter()
   private var task: URLSessionDataTask?
   private var searchController = UISearchController(searchResultsController: nil)
+  private var baseArticles:[Article] = NewsAPI.service.articles
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -50,6 +51,11 @@ class ArticleListController: UITableViewController {
     refreshControl?.tintColor = UIColor.white
     refreshControl?.addTarget(self, action: #selector(searchArticleRC), for: .valueChanged)
     
+    searchController.searchBar.autocapitalizationType = .none
+    searchController.delegate = self
+    searchController.searchResultsUpdater = self
+    searchController.dimsBackgroundDuringPresentation = false
+    
     navigationItem.searchController = searchController
     navigationItem.hidesSearchBarWhenScrolling = true
   }
@@ -57,12 +63,12 @@ class ArticleListController: UITableViewController {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     
-    Utils.showDialog(in: self)
+    showDialog(in: self)
     guard let source = source else { return }
     token = NewsAPI.service.observe(\.articles) { _, _ in
       DispatchQueue.main.async {
         self.tableView.reloadData()
-        Utils.dismissDialog(in: self)
+        dismissDialog(in: self)
       }
     }
     NewsAPI.service.fetchArticles(for: source)
@@ -75,14 +81,14 @@ class ArticleListController: UITableViewController {
     NewsAPI.service.resetArticles()
   }
     
-    @objc func searchArticleRC(){
-        token = NewsAPI.service.observe(\.articles) { _, _ in
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-                self.refreshControl?.endRefreshing()
-            }
+   @objc func searchArticleRC(){
+     token = NewsAPI.service.observe(\.articles) { _, _ in
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.refreshControl?.endRefreshing()
         }
-        NewsAPI.service.fetchArticles(for: source!)
+     }
+     NewsAPI.service.fetchArticles(for: source!)
     }
 }
 
@@ -173,6 +179,35 @@ extension ArticleListController{
     private func cancelDownloadBanner(forItemAtIndex index: Int){
         guard let task = task else { return }
         task.cancel()
+    }
+}
+
+extension ArticleListController: UISearchResultsUpdating{
+    
+    func filterContent(searchText:String){
+        if searchText != "", searchText.count >= 4{
+           findMatches(searchText)
+        }else{
+            //NewsAPI.service.fetchArticles(for: source!)
+        }
+        tableView.reloadData()
+    }
+    
+    func findMatches(_ searchText:String){
+        //getSearchTerms(text: searchText, language: Locale.current.languageCode) { (word) in
+         NewsAPI.service.fetchArticles(for: source!, with: searchText)
+       // }
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContent(searchText: searchController.searchBar.text!)
+    }
+}
+
+extension ArticleListController : UISearchControllerDelegate{
+    
+    func willDismissSearchController(_ searchController: UISearchController) {
+        filterContent(searchText: "")
     }
 }
 

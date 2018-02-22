@@ -44,7 +44,7 @@ class NewsAPI: NSObject {
     private static let key = "3bbc0a09024f445ba0aff135bebe1434"
     
     case sources
-    case articles(Source)
+    case articles(Source,String)
     
     func fetch(completion: @escaping (Data) -> ()) {
       let session = URLSession(configuration: .default)
@@ -59,8 +59,8 @@ class NewsAPI: NSObject {
       switch self {
       case .sources:
         return URL(string: "\(API.basePath)/sources?language=\(NSLocalizedString("language", comment: "Localized kind: Language"))&apiKey=\(API.key)")!
-      case .articles(let source):
-        return URL(string: "\(API.basePath)/top-headlines?sources=\(source.id)&pageSize=100&apiKey=\(API.key)")!
+      case .articles(let source, let query):
+        return URL(string: "\(API.basePath)/top-headlines?sources=\(source.id)&q=\(query)&pageSize=100&apiKey=\(API.key)")!
       }
     }
   }
@@ -76,7 +76,7 @@ class NewsAPI: NSObject {
     }
   }
   
-  func fetchArticles(for source: Source) {
+    func fetchArticles(for source: Source, with query:String = "") {
     let formatter = ISO8601DateFormatter()
     let customDateHandler: (Decoder) throws -> Date = { decoder in
       var string = try decoder.singleValueContainer().decode(String.self)
@@ -84,7 +84,7 @@ class NewsAPI: NSObject {
       guard let date = formatter.date(from: string) else { return Date() }
       return date
     }
-    API.articles(source).fetch { data in
+    API.articles(source,query).fetch { data in
       let decoder = JSONDecoder()
       decoder.dateDecodingStrategy = .custom(customDateHandler)
       if let articles = try! decoder.decode(Response.self, from: data).articles {
