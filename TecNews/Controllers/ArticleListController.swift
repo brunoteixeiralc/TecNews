@@ -122,7 +122,19 @@ extension ArticleListController {
         
         let article = NewsAPI.service.articles[indexPath.row]
         
-        let shareAction = UIContextualAction(style: .normal, title: "SHARE") { [weak self] (action, view, completionHandler) in
+        let shareAction = UIContextualAction(style: .normal, title: "") { [weak self] (action, view, completionHandler) in
+            guard let `self` = self else{
+                completionHandler(false)
+                return
+            }
+            
+            let activityViewController = UIActivityViewController(activityItems: [URL(string: article.sourceURL.absoluteString)!], applicationActivities: nil)
+            self.present(activityViewController, animated: true, completion: {})
+            
+            completionHandler(true)
+        }
+        
+        let favorite = UIContextualAction(style: .normal, title: "") { [weak self] (action, view, completionHandler) in
             guard let `self` = self else{
                 completionHandler(false)
                 return
@@ -131,7 +143,10 @@ extension ArticleListController {
         }
         
        shareAction.backgroundColor = #colorLiteral(red: 0.1725490196, green: 0.2431372549, blue: 0.3137254902, alpha: 1)
-       let configuration = UISwipeActionsConfiguration(actions: [shareAction])
+       shareAction.image = UIImage(named: "share")
+       favorite.image = UIImage(named: "favorite")
+       
+       let configuration = UISwipeActionsConfiguration(actions: [shareAction,favorite])
        return configuration
         
     }
