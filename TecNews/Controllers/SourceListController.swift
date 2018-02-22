@@ -57,8 +57,9 @@ class SourceListController: UITableViewController {
     refreshControl?.tintColor = UIColor.white
     refreshControl?.addTarget(self, action: #selector(searchSourceRC), for: .valueChanged)
     
-    navigationItem.searchController = searchController
-    navigationItem.hidesSearchBarWhenScrolling = true
+    //TODO searchController better.
+    //navigationItem.searchController = searchController
+    //navigationItem.hidesSearchBarWhenScrolling = true
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

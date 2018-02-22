@@ -55,6 +55,8 @@ class ArticleListController: UITableViewController {
     searchController.delegate = self
     searchController.searchResultsUpdater = self
     searchController.dimsBackgroundDuringPresentation = false
+    searchController.searchBar.delegate = self
+    definesPresentationContext = true
     
     navigationItem.searchController = searchController
     navigationItem.hidesSearchBarWhenScrolling = true
@@ -140,19 +142,19 @@ extension ArticleListController {
             completionHandler(true)
         }
         
-        let favorite = UIContextualAction(style: .normal, title: "") { [weak self] (action, view, completionHandler) in
-            guard let `self` = self else{
-                completionHandler(false)
-                return
-            }
-            completionHandler(true)
-        }
+//        let favorite = UIContextualAction(style: .normal, title: "") { [weak self] (action, view, completionHandler) in
+//            guard let `self` = self else{
+//                completionHandler(false)
+//                return
+//            }
+//            completionHandler(true)
+//        }
         
        shareAction.backgroundColor = #colorLiteral(red: 0.1725490196, green: 0.2431372549, blue: 0.3137254902, alpha: 1)
        shareAction.image = UIImage(named: "share")
-       favorite.image = UIImage(named: "favorite")
+//       favorite.image = UIImage(named: "favorite")
        
-       let configuration = UISwipeActionsConfiguration(actions: [shareAction,favorite])
+       let configuration = UISwipeActionsConfiguration(actions: [shareAction])
        return configuration
         
     }
@@ -185,22 +187,25 @@ extension ArticleListController{
 extension ArticleListController: UISearchResultsUpdating{
     
     func filterContent(searchText:String){
-        if searchText != "", searchText.count >= 4{
-           findMatches(searchText)
-        }else{
-            //NewsAPI.service.fetchArticles(for: source!)
-        }
+        findMatches(searchText)
         tableView.reloadData()
     }
     
     func findMatches(_ searchText:String){
-        //getSearchTerms(text: searchText, language: Locale.current.languageCode) { (word) in
          NewsAPI.service.fetchArticles(for: source!, with: searchText)
-       // }
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        filterContent(searchText: searchController.searchBar.text!)
+        //filterContent(searchText: searchController.searchBar.text!)
+    }
+    
+}
+
+extension ArticleListController: UISearchBarDelegate{
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        filterContent(searchText: searchBar.text!)
+        searchController.searchBar.showsCancelButton = false
     }
 }
 
