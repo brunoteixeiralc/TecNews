@@ -36,7 +36,7 @@ class Article: NSObject, Codable {
   let title: String
   let snippet: String?
   let sourceURL: URL
-  let imageURL: URL?
+  let imageURL: String?
   let published: Date?
   var image: UIImage? = nil
     
@@ -49,7 +49,7 @@ class Article: NSObject, Codable {
     case published = "publishedAt"
   }
   
-    init(author: String, title: String, snippet: String, sourceURL: URL, imageURL: URL, published: Date) {
+    init(author: String, title: String, snippet: String, sourceURL: URL, imageURL: String, published: Date) {
     self.author = author
     self.title = title
     self.snippet = snippet
@@ -65,7 +65,7 @@ class Article: NSObject, Codable {
     let rawSnippet = try container.decodeIfPresent(String.self, forKey: .snippet)
     snippet = rawSnippet?.deletingCharacters(in: CharacterSet.newlines)
     sourceURL = try container.decode(URL.self, forKey: .sourceURL)
-    imageURL = try container.decodeIfPresent(URL.self, forKey: .imageURL)
+    imageURL = try container.decodeIfPresent(String.self, forKey: .imageURL)
     published = try container.decodeIfPresent(Date.self, forKey: .published)
     
   }

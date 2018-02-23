@@ -25,3 +25,12 @@ func dismissDialog(in view:UIViewController){
      view.dismiss(animated: false, completion: nil)
 }
 
+func URLValid(urlString:String?) -> Bool{
+    if let urlString = urlString{
+        if let url = URL(string: urlString) {
+            return UIApplication.shared.canOpenURL(url as URL)
+        }
+    }
+    return false
+}
+

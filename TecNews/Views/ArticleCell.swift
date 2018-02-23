@@ -43,7 +43,11 @@ class ArticleCell: UITableViewCell {
     if let image = article.image{
         self.bannerView.image = image
     }else if let imageURL = article.imageURL{
-        downloadBanner(from: imageURL)
+        if(URLValid(urlString: imageURL)){
+           downloadBanner(from: URL(string:imageURL)!)
+        }
+    }else{
+        self.bannerView.image = UIImage(named:"image")
     }
     
     if let published = article.published {

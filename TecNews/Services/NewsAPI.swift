@@ -77,20 +77,20 @@ class NewsAPI: NSObject {
   }
   
     func fetchArticles(for source: Source, with query:String = "") {
-    let formatter = ISO8601DateFormatter()
-    let customDateHandler: (Decoder) throws -> Date = { decoder in
-      var string = try decoder.singleValueContainer().decode(String.self)
-      string.deleteMillisecondsIfPresent()
-      guard let date = formatter.date(from: string) else { return Date() }
-      return date
-    }
-    API.articles(source,query).fetch { data in
-      let decoder = JSONDecoder()
-      decoder.dateDecodingStrategy = .custom(customDateHandler)
-      if let articles = try! decoder.decode(Response.self, from: data).articles {
-        self.articles = articles
-      }
-    }
+        let formatter = ISO8601DateFormatter()
+        let customDateHandler: (Decoder) throws -> Date = { decoder in
+          var string = try decoder.singleValueContainer().decode(String.self)
+          string.deleteMillisecondsIfPresent()
+          guard let date = formatter.date(from: string) else { return Date() }
+          return date
+        }
+        API.articles(source,query).fetch { data in
+          let decoder = JSONDecoder()
+          decoder.dateDecodingStrategy = .custom(customDateHandler)
+          if let articles = try! decoder.decode(Response.self, from: data).articles {
+            self.articles = articles
+          }
+        }
   }
   
   func resetArticles() {

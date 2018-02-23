@@ -109,13 +109,12 @@ extension ArticleListController {
         if let image = NewsAPI.service.articles[indexPath.row].image {
             imageView.image = image
         } else {
-            imageView.image = nil
+            imageView.image = UIImage(named:"image")
             self.downloadBanner(forItemAtIndex: indexPath.row)
         }
     }
     
     cell.render(article: NewsAPI.service.articles[indexPath.row], using: formatter)
-    
     return cell
   }
     
@@ -164,17 +163,22 @@ extension ArticleListController{
     
     private func downloadBanner(forItemAtIndex index: Int) {
         if let imageUrl = NewsAPI.service.articles[index].imageURL{
-            let task = URLSession.shared.dataTask(with: imageUrl) { data, response, error in
-                guard let data = data, error == nil else { return }
-                DispatchQueue.main.async {
-                     let indexPath = IndexPath(row: index, section: 0)
-                     if self.tableView.indexPathsForVisibleRows?.contains(indexPath) ?? false {
-                        NewsAPI.service.articles[index].image = UIImage(data: data)
+            if (URLValid(urlString: imageUrl)){
+                let task = URLSession.shared.dataTask(with: URL(string:imageUrl)!) { data, response, error in
+                    guard let data = data, error == nil else { return }
+                    DispatchQueue.main.async {
+                        let indexPath = IndexPath(row: index, section: 0)
+                        if self.tableView.indexPathsForVisibleRows?.contains(indexPath) ?? false {
+                            if NewsAPI.service.articles.count > 0{
+                                NewsAPI.service.articles[index].image = UIImage(data: data)
+                            }
+                            
+                        }
                     }
                 }
+                task.resume()
+                self.task = task
             }
-            task.resume()
-            self.task = task
         }
     }
     
