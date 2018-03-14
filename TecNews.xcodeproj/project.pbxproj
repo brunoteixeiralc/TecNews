@@ -24,7 +24,18 @@
 		F497F6C320365E2A00D251D5 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F497F6C220365E2900D251D5 /* .gitignore */; };
 		F497F6C8203B9D6000D251D5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F497F6CA203B9D6000D251D5 /* Localizable.strings */; };
 		F497F6CF203BBC8200D251D5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F497F6CE203BBC8200D251D5 /* Utils.swift */; };
+		F4F9364820597CDC00EAB800 /* TecNewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9364720597CDC00EAB800 /* TecNewsUITests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F4F9364A20597CDC00EAB800 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7B4950071F3B478800C5133B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7B49500E1F3B478800C5133B;
+			remoteInfo = TecNews;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1CFB9382F89D1B4CA9B20687 /* Pods_TecNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TecNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +63,9 @@
 		F497F6CC203B9D6600D251D5 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F497F6CD203B9D8B00D251D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F497F6CE203BBC8200D251D5 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		F4F9364520597CDC00EAB800 /* TecNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TecNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4F9364720597CDC00EAB800 /* TecNewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TecNewsUITests.swift; sourceTree = "<group>"; };
+		F4F9364920597CDC00EAB800 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +77,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F4F9364220597CDC00EAB800 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -70,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				7B4950111F3B478800C5133B /* TecNews */,
+				F4F9364620597CDC00EAB800 /* TecNewsUITests */,
 				7B4950101F3B478800C5133B /* Products */,
 				C3EEE8E947A1D12DEB31847A /* Pods */,
 				A924FA620DC4990680D14E42 /* Frameworks */,
@@ -80,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				7B49500F1F3B478800C5133B /* TecNews.app */,
+				F4F9364520597CDC00EAB800 /* TecNewsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -189,6 +212,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F4F9364620597CDC00EAB800 /* TecNewsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F4F9364720597CDC00EAB800 /* TecNewsUITests.swift */,
+				F4F9364920597CDC00EAB800 /* Info.plist */,
+			);
+			path = TecNewsUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -212,18 +244,41 @@
 			productReference = 7B49500F1F3B478800C5133B /* TecNews.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F4F9364420597CDC00EAB800 /* TecNewsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4F9364E20597CDC00EAB800 /* Build configuration list for PBXNativeTarget "TecNewsUITests" */;
+			buildPhases = (
+				F4F9364120597CDC00EAB800 /* Sources */,
+				F4F9364220597CDC00EAB800 /* Frameworks */,
+				F4F9364320597CDC00EAB800 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F4F9364B20597CDC00EAB800 /* PBXTargetDependency */,
+			);
+			name = TecNewsUITests;
+			productName = TecNewsUITests;
+			productReference = F4F9364520597CDC00EAB800 /* TecNewsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		7B4950071F3B478800C5133B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Razeware LLC";
 				TargetAttributes = {
 					7B49500E1F3B478800C5133B = {
 						CreatedOnToolsVersion = 9.0;
+					};
+					F4F9364420597CDC00EAB800 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7B49500E1F3B478800C5133B;
 					};
 				};
 			};
@@ -243,6 +298,7 @@
 			projectRoot = "";
 			targets = (
 				7B49500E1F3B478800C5133B /* TecNews */,
+				F4F9364420597CDC00EAB800 /* TecNewsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -257,6 +313,13 @@
 				F497F6C8203B9D6000D251D5 /* Localizable.strings in Resources */,
 				F497F6C12036393800D251D5 /* launchScreen.json in Resources */,
 				7B4950181F3B478800C5133B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4F9364320597CDC00EAB800 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,7 +398,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F4F9364120597CDC00EAB800 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4F9364820597CDC00EAB800 /* TecNewsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F4F9364B20597CDC00EAB800 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7B49500E1F3B478800C5133B /* TecNews */;
+			targetProxy = F4F9364A20597CDC00EAB800 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7B4950161F3B478800C5133B /* Main.storyboard */ = {
@@ -500,6 +579,38 @@
 			};
 			name = Release;
 		};
+		F4F9364C20597CDC00EAB800 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8UW672R5KC;
+				INFOPLIST_FILE = TecNewsUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.TecNewsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TecNews;
+			};
+			name = Debug;
+		};
+		F4F9364D20597CDC00EAB800 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8UW672R5KC;
+				INFOPLIST_FILE = TecNewsUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.TecNewsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TecNews;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -517,6 +628,15 @@
 			buildConfigurations = (
 				7B4950221F3B478800C5133B /* Debug */,
 				7B4950231F3B478800C5133B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4F9364E20597CDC00EAB800 /* Build configuration list for PBXNativeTarget "TecNewsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4F9364C20597CDC00EAB800 /* Debug */,
+				F4F9364D20597CDC00EAB800 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

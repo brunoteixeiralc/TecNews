@@ -29,6 +29,16 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F4F9364420597CDC00EAB800"
+               BuildableName = "TecNewsUITests.xctest"
+               BlueprintName = "TecNewsUITests"
+               ReferencedContainer = "container:TecNews.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
