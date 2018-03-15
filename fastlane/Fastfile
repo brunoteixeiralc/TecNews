@@ -16,16 +16,20 @@ platform :ios do
 
 before_all do
     update_fastlane
-    cocoapods
+    cocoapods(
+	clean: true,
+  	podfile: "./Podfile"
+    )
+
 end
 
 desc "Run tests"
     lane :tests do
     run_tests(code_coverage:true,
         clean:true,
-        project: "afazer.xcodeproj",
+        workspace: "TecNews.xcworkspace",
         devices: ["iPhone 5s"],
-        scheme: "afazerUITests",
+        scheme: "TecNewsUITests",
         slack_message:"Successfully run UI Tests")
 
 end
