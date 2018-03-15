@@ -20,17 +20,12 @@
 		7BBBCD901F3C4F9F006D87F7 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBBCD8F1F3C4F9F006D87F7 /* ArticleCell.swift */; };
 		D0A327ACE27ED46B4E99E167 /* Pods_TecNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CFB9382F89D1B4CA9B20687 /* Pods_TecNews.framework */; };
 		F497F6BF203632C100D251D5 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F497F6BE203632C100D251D5 /* LaunchViewController.swift */; };
-		F497F6C320365E2A00D251D5 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F497F6C220365E2900D251D5 /* .gitignore */; };
 		F497F6C8203B9D6000D251D5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F497F6CA203B9D6000D251D5 /* Localizable.strings */; };
 		F497F6CF203BBC8200D251D5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F497F6CE203BBC8200D251D5 /* Utils.swift */; };
 		F4DBE37B2059EEA9006A42F7 /* launchScreen.json in Resources */ = {isa = PBXBuildFile; fileRef = F4DBE37A2059EEA9006A42F7 /* launchScreen.json */; };
 		F4DBE37D2059F676006A42F7 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DBE37C2059F676006A42F7 /* SnapshotHelper.swift */; };
-		F4DBE3842059F7F8006A42F7 /* rating_config.json in Resources */ = {isa = PBXBuildFile; fileRef = F4DBE37F2059F7F7006A42F7 /* rating_config.json */; };
-		F4DBE3852059F7F8006A42F7 /* Appfile in Resources */ = {isa = PBXBuildFile; fileRef = F4DBE3802059F7F8006A42F7 /* Appfile */; };
-		F4DBE3862059F7F8006A42F7 /* Matchfile in Resources */ = {isa = PBXBuildFile; fileRef = F4DBE3812059F7F8006A42F7 /* Matchfile */; };
-		F4DBE3872059F7F8006A42F7 /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = F4DBE3822059F7F8006A42F7 /* Fastfile */; };
-		F4DBE3882059F7F8006A42F7 /* Snapfile in Resources */ = {isa = PBXBuildFile; fileRef = F4DBE3832059F7F8006A42F7 /* Snapfile */; };
 		F4F9364820597CDC00EAB800 /* TecNewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9364720597CDC00EAB800 /* TecNewsUITests.swift */; };
+		F4F93650205AE75D00EAB800 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F4F9364F205AE75C00EAB800 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +56,6 @@
 		7BBBCD8F1F3C4F9F006D87F7 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		98BE9F306ECCEB47DFF35A40 /* Pods-TecNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TecNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TecNews/Pods-TecNews.debug.xcconfig"; sourceTree = "<group>"; };
 		F497F6BE203632C100D251D5 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
-		F497F6C220365E2900D251D5 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		F497F6C6203B9D2A00D251D5 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		F497F6C7203B9D3900D251D5 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		F497F6CB203B9D6500D251D5 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -70,14 +64,10 @@
 		F497F6CE203BBC8200D251D5 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		F4DBE37A2059EEA9006A42F7 /* launchScreen.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = launchScreen.json; sourceTree = "<group>"; };
 		F4DBE37C2059F676006A42F7 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
-		F4DBE37F2059F7F7006A42F7 /* rating_config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = rating_config.json; path = fastlane/rating_config.json; sourceTree = SOURCE_ROOT; };
-		F4DBE3802059F7F8006A42F7 /* Appfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Appfile; path = fastlane/Appfile; sourceTree = SOURCE_ROOT; };
-		F4DBE3812059F7F8006A42F7 /* Matchfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Matchfile; path = fastlane/Matchfile; sourceTree = SOURCE_ROOT; };
-		F4DBE3822059F7F8006A42F7 /* Fastfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Fastfile; path = fastlane/Fastfile; sourceTree = SOURCE_ROOT; };
-		F4DBE3832059F7F8006A42F7 /* Snapfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Snapfile; path = fastlane/Snapfile; sourceTree = SOURCE_ROOT; };
 		F4F9364520597CDC00EAB800 /* TecNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TecNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F9364720597CDC00EAB800 /* TecNewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TecNewsUITests.swift; sourceTree = "<group>"; };
 		F4F9364920597CDC00EAB800 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4F9364F205AE75C00EAB800 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +112,7 @@
 		7B4950111F3B478800C5133B /* TecNews */ = {
 			isa = PBXGroup;
 			children = (
-				F4DBE37E2059F7D5006A42F7 /* fastlane */,
-				F497F6C220365E2900D251D5 /* .gitignore */,
+				F4F9364F205AE75C00EAB800 /* .gitignore */,
 				7B4950241F3B48AB00C5133B /* Assets */,
 				7B49502F1F3B4D1800C5133B /* Controllers */,
 				7BBBCD8C1F3C4EB8006D87F7 /* Extensions */,
@@ -225,18 +214,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		F4DBE37E2059F7D5006A42F7 /* fastlane */ = {
-			isa = PBXGroup;
-			children = (
-				F4DBE3802059F7F8006A42F7 /* Appfile */,
-				F4DBE3822059F7F8006A42F7 /* Fastfile */,
-				F4DBE3812059F7F8006A42F7 /* Matchfile */,
-				F4DBE37F2059F7F7006A42F7 /* rating_config.json */,
-				F4DBE3832059F7F8006A42F7 /* Snapfile */,
-			);
-			path = fastlane;
-			sourceTree = "<group>";
-		};
 		F4F9364620597CDC00EAB800 /* TecNewsUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,16 +311,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4DBE3882059F7F8006A42F7 /* Snapfile in Resources */,
-				F4DBE3872059F7F8006A42F7 /* Fastfile in Resources */,
-				F497F6C320365E2A00D251D5 /* .gitignore in Resources */,
 				7B49501A1F3B478800C5133B /* Assets.xcassets in Resources */,
-				F4DBE3842059F7F8006A42F7 /* rating_config.json in Resources */,
 				F497F6C8203B9D6000D251D5 /* Localizable.strings in Resources */,
 				F4DBE37B2059EEA9006A42F7 /* launchScreen.json in Resources */,
+				F4F93650205AE75D00EAB800 /* .gitignore in Resources */,
 				7B4950181F3B478800C5133B /* Main.storyboard in Resources */,
-				F4DBE3862059F7F8006A42F7 /* Matchfile in Resources */,
-				F4DBE3852059F7F8006A42F7 /* Appfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
