@@ -44,13 +44,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TecNewsUITests/TecNewsUITests.swift"
-            timestampString = "542739700.928055"
+            timestampString = "542765072.992725"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
             endingLineNumber = "24"
-            landmarkName = "testArticle()"
-            landmarkType = "7">
+            landmarkName = "TecNewsUITests"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -60,12 +60,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TecNewsUITests/TecNewsUITests.swift"
-            timestampString = "542739700.928941"
+            timestampString = "542765072.9930381"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
             endingLineNumber = "26"
-            landmarkName = "testArticle()"
+            landmarkName = "testSource()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

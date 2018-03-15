@@ -12,16 +12,20 @@ class TecNewsUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()
-        continueAfterFailure = false
-        XCUIApplication().launch()
+        
+        let app = XCUIApplication()
+        setupSnapshot(app)
+        app.launch()
     }
     
     override func tearDown() {
         super.tearDown()
     }
     
-    func testArticle() {
+    func testSource() {
         let app = XCUIApplication()
+        
+        snapshot("Source")
         
         let cell = app.tables.cells.element(boundBy: 0)
         expectation(for: NSPredicate(format: "hittable == true"), evaluatedWith: cell, handler: nil)
@@ -31,13 +35,15 @@ class TecNewsUITests: XCTestCase {
         
     }
     
-    func testSource(){
+    func testArticle(){
         let app = XCUIApplication()
         
         let cell =  app.tables.cells.element(boundBy: 0)
         expectation(for: NSPredicate(format: "hittable == true"), evaluatedWith: cell, handler: nil)
         waitForExpectations(timeout: 10.0, handler: nil)
         cell.tap()
+        
+        snapshot("Article")
         
         let cellArticle =  app.tables.cells.element(boundBy: 0)
         expectation(for: NSPredicate(format: "hittable == true"), evaluatedWith: cellArticle, handler: nil)
@@ -59,6 +65,9 @@ class TecNewsUITests: XCTestCase {
         waitForExpectations(timeout: 10.0, handler: nil)
         
         cellArticle.swipeLeft()
+
+        snapshot("Share")
+        
         cellArticle.buttons["share"].tap()
         
     }
