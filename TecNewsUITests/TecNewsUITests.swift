@@ -26,7 +26,7 @@ class TecNewsUITests: XCTestCase {
         let app = XCUIApplication()
         let cell = app.tables.cells.element(boundBy: 0)
         expectation(for: NSPredicate(format: "hittable == true"), evaluatedWith: cell, handler: nil)
-        waitForExpectations(timeout: 10.0, handler: nil)
+        waitForExpectations(timeout: 15.0, handler: nil)
         
         snapshot("Source")
         
@@ -40,14 +40,14 @@ class TecNewsUITests: XCTestCase {
         
         let cell =  app.tables.cells.element(boundBy: 0)
         expectation(for: NSPredicate(format: "hittable == true"), evaluatedWith: cell, handler: nil)
-        waitForExpectations(timeout: 10.0, handler: nil)
+        waitForExpectations(timeout: 15.0, handler: nil)
         cell.tap()
         
         snapshot("Article")
         
         let cellArticle =  app.tables.cells.element(boundBy: 0)
         expectation(for: NSPredicate(format: "hittable == true"), evaluatedWith: cellArticle, handler: nil)
-        waitForExpectations(timeout: 10.0, handler: nil)
+        waitForExpectations(timeout: 15.0, handler: nil)
         cellArticle.swipeUp()
         
     }
@@ -57,12 +57,12 @@ class TecNewsUITests: XCTestCase {
         
         let cell =  app.tables.cells.element(boundBy: 0)
         expectation(for: NSPredicate(format: "hittable == true"), evaluatedWith: cell, handler: nil)
-        waitForExpectations(timeout: 10.0, handler: nil)
+        waitForExpectations(timeout: 15.0, handler: nil)
         cell.tap()
         
         let cellArticle =  app.tables.cells.element(boundBy: 0)
         expectation(for: NSPredicate(format: "hittable == true"), evaluatedWith: cellArticle, handler: nil)
-        waitForExpectations(timeout: 10.0, handler: nil)
+        waitForExpectations(timeout: 15.0, handler: nil)
         
         cellArticle.swipeLeft()
 
