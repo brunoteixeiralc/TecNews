@@ -56,7 +56,7 @@ playground.xcworkspace
 
 fastlane/report.xml
 fastlane/Preview.html
-screenshots
+fastlane/screenshots
 fastlane/test_output
 
 ### Swift.Carthage Stack ###

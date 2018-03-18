@@ -16,16 +16,19 @@ platform :ios do
 
 before_all do
     update_fastlane
-    cocoapods
+    cocoapods(
+  		clean: true,
+  		podfile: "./Podfile"
+	)
 end
 
 desc "Run tests"
     lane :tests do
     run_tests(code_coverage:true,
         clean:true,
-        project: "afazer.xcodeproj",
+        workspace: "TecNews.xcworkspace",
         devices: ["iPhone 5s"],
-        scheme: "afazerUITests",
+        scheme: "TecNewsUITests",
         slack_message:"Successfully run UI Tests")
 
 end
@@ -58,31 +61,31 @@ end
 
 desc "Beta app"
     lane :beta do |options|
-        match(type: "appstore", readonly: true)
+        match(type: "appstore", readonly: false)
         increment_version_number(
             version_number: options[:version_number],
-            xcodeproj: "afazer.xcodeproj"
+            xcodeproj: "TecNews.xcodeproj"
         )
         increment_build_number(
             build_number: options[:build_number],
-            xcodeproj: "afazer.xcodeproj"
+            xcodeproj: "TecNews.xcodeproj"
         )
         changelog = prompt(
-            text: "What's new : ",
+            text: "What's new (must be at least 4 characters long): ",
             multi_line_end_keyword: "END"
         )
-        build_app(scheme: "afazer",
+        build_app(scheme: "TecNews",
             clean:true,
-            project: "afazer.xcodeproj",
+            workspace: "TecNews.xcworkspace",
             include_bitcode: true,
             export_method:"app-store"
         )
         pilot(changelog: changelog,
             beta_app_feedback_email:"brunoteixeiralc@gmail.com",
-            beta_app_description: "A Fazer BETA!",
+            beta_app_description: "TecNews BETA!",
             distribute_external:true,
-            groups: "Testes Externos A Fazer"
-        )
+            groups: "Testes Externos TecNews"
+        )   
         slack(message: "Successfully uploaded to Test Flight",
             success:true)
 end

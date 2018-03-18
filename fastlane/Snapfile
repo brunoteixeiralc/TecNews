@@ -16,7 +16,7 @@
 languages([
     "en-US",
     "es-ES",
-    "pt_BR"
+    "pt-BR"
  ])
 
 # Choose which project/workspace to use
@@ -27,7 +27,7 @@ languages([
  scheme("TecNewsUITests")
 
 # Where should the resulting screenshots be stored?
-  output_directory("./screenshots")
+  output_directory("./fastlane/screenshots")
 
 # remove the '#' to clear all previously generated screenshots before creating new ones
   clear_previous_screenshots(true)

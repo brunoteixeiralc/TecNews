@@ -25,11 +25,12 @@ class TecNewsUITests: XCTestCase {
     func testSource() {
         let app = XCUIApplication()
         
-        snapshot("Source")
-        
         let cell = app.tables.cells.element(boundBy: 0)
         expectation(for: NSPredicate(format: "hittable == true"), evaluatedWith: cell, handler: nil)
         waitForExpectations(timeout: 10.0, handler: nil)
+        
+        snapshot("Source")
+        
         cell.swipeUp()
         cell.tap()
         
@@ -43,11 +44,12 @@ class TecNewsUITests: XCTestCase {
         waitForExpectations(timeout: 10.0, handler: nil)
         cell.tap()
         
-        snapshot("Article")
-        
         let cellArticle =  app.tables.cells.element(boundBy: 0)
         expectation(for: NSPredicate(format: "hittable == true"), evaluatedWith: cellArticle, handler: nil)
         waitForExpectations(timeout: 10.0, handler: nil)
+        
+        snapshot("Article")
+        
         cellArticle.swipeUp()
         
     }
