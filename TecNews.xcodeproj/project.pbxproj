@@ -570,7 +570,7 @@
 				PROVISIONING_PROFILE = "0bf83174-03ad-42a7-9a4a-8d380d6e58bf";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development br.com.tecNews";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -591,7 +591,7 @@
 				PROVISIONING_PROFILE = "6f7c78c4-09dd-4acc-b437-4b3daa3e8113";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore br.com.tecNews";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

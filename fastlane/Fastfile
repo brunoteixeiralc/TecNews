@@ -96,7 +96,7 @@ desc "Release app"
         match(type: "appstore", readonly: true)
         build_app(scheme: "TecNews",
             clean:true,
-            project: "afazer.xcodeproj",
+            workspace: "TecNews.xcworkspace",
             include_bitcode: true,
             export_method:"app-store"
         )
