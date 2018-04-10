@@ -38,6 +38,8 @@ class SourceListController: UITableViewController {
   override func viewWillAppear(_ animated: Bool) {
      super.viewWillAppear(true)
      self.navigationController?.isNavigationBarHidden = false
+     self.tabBarController?.navigationItem.setHidesBackButton(true, animated: false)
+     self.tabBarController?.title = "Choose one source"
   }
   
   override func viewDidLoad() {

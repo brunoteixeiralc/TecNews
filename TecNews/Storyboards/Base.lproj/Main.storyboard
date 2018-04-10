@@ -11,12 +11,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Sources-->
+        <!--Item-->
         <scene sceneID="7Ai-c6-cJR">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eNV-do-wPB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="FSw-pL-r7j" customClass="SourceListController" customModule="TecNews" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kvY-k6-Ts7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
@@ -81,18 +82,15 @@
                             <outlet property="delegate" destination="FSw-pL-r7j" id="Eg4-l9-6ka"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Sources" largeTitleDisplayMode="always" id="VtG-7S-q0e">
-                        <barButtonItem key="backBarButtonItem" title="Sources" id="wfQ-07-PWN"/>
-                    </navigationItem>
+                    <tabBarItem key="tabBarItem" title="Item" id="Cta-SM-CMa"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eNV-do-wPB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="436" y="168.6656671664168"/>
+            <point key="canvasLocation" x="457" y="169"/>
         </scene>
-        <!--News-->
+        <!--Choose an article to read-->
         <scene sceneID="cPG-NU-IjQ">
             <objects>
-                <tableViewController title="News" id="0z9-vf-GcB" customClass="ArticleListController" customModule="TecNews" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Choose an article to read" id="0z9-vf-GcB" customClass="ArticleListController" customModule="TecNews" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yO8-11-X9H">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -195,12 +193,46 @@
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="h7w-gf-Ao6"/>
                     <connections>
-                        <segue destination="FSw-pL-r7j" kind="show" identifier="toSourceVC" id="4vy-T5-cBS"/>
+                        <segue destination="GPX-4B-rEa" kind="show" identifier="toSourceVC" id="FBX-SU-MAf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ctz-Ml-LFj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-370" y="169"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="3FO-c9-uv8">
+            <objects>
+                <tabBarController id="GPX-4B-rEa" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="INP-FU-gzm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="FSw-pL-r7j" kind="relationship" relationship="viewControllers" id="kXA-fz-nC0"/>
+                        <segue destination="W7I-ZG-VcL" kind="relationship" relationship="viewControllers" id="SbZ-0M-50b"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rFN-Ev-woV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="457" y="-621"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="uz9-gP-g7e">
+            <objects>
+                <viewController id="W7I-ZG-VcL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bfc-Lb-nIZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="gX4-S1-ijv"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="tyB-Tc-Hht"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r3k-0B-58W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1333" y="-628"/>
         </scene>
     </scenes>
     <resources>
