@@ -42,8 +42,6 @@ class ArticleListController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.navigationController?.title = "dsdsds"
-    
     formatter.dateFormat = "MMM d, h:mm a"
     tableView.prefetchDataSource = self
     

@@ -25,6 +25,7 @@
 		F4DBE37B2059EEA9006A42F7 /* launchScreen.json in Resources */ = {isa = PBXBuildFile; fileRef = F4DBE37A2059EEA9006A42F7 /* launchScreen.json */; };
 		F4DBE37D2059F676006A42F7 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DBE37C2059F676006A42F7 /* SnapshotHelper.swift */; };
 		F4F15670207D618100387C93 /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = F4F1566F207D618000387C93 /* empty.json */; };
+		F4F15672207E6E1D00387C93 /* BookmarkListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F15671207E6E1D00387C93 /* BookmarkListController.swift */; };
 		F4F9364820597CDC00EAB800 /* TecNewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9364720597CDC00EAB800 /* TecNewsUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		F4DBE37A2059EEA9006A42F7 /* launchScreen.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = launchScreen.json; sourceTree = "<group>"; };
 		F4DBE37C2059F676006A42F7 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		F4F1566F207D618000387C93 /* empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty.json; sourceTree = "<group>"; };
+		F4F15671207E6E1D00387C93 /* BookmarkListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkListController.swift; sourceTree = "<group>"; };
 		F4F9364520597CDC00EAB800 /* TecNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TecNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F9364720597CDC00EAB800 /* TecNewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TecNewsUITests.swift; sourceTree = "<group>"; };
 		F4F9364920597CDC00EAB800 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				7B4950351F3B59B500C5133B /* ArticleListController.swift */,
 				7B4950301F3B4D4B00C5133B /* SourceListController.swift */,
 				F497F6BE203632C100D251D5 /* LaunchViewController.swift */,
+				F4F15671207E6E1D00387C93 /* BookmarkListController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B4950291F3B49E900C5133B /* Source.swift in Sources */,
+				F4F15672207E6E1D00387C93 /* BookmarkListController.swift in Sources */,
 				7B4950131F3B478800C5133B /* AppDelegate.swift in Sources */,
 				7B4950361F3B59B500C5133B /* ArticleListController.swift in Sources */,
 				7B4950311F3B4D4B00C5133B /* SourceListController.swift in Sources */,
