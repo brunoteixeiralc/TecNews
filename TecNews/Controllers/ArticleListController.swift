@@ -149,12 +149,12 @@ extension ArticleListController {
                 return
             }
             
-            let articleFav = RealmArticle(value: ["author":article.author as! String ?? nil ,
-                                                  "title":article.title as! String ?? nil,
-                                                  "snippet":article.snippet as! String  ?? nil,
+            let articleFav = RealmArticle(value: ["author":article.author,
+                                                  "title":article.title,
+                                                  "snippet":article.snippet,
                                                   "sourceURL":article.sourceURL.absoluteString,
-                                                  "imageURL":article.imageURL as! String ?? nil,
-                                                  "published":article.published as! Date ?? nil])
+                                                  "imageURL":article.imageURL,
+                                                  "published":article.published])
             let realm = try! Realm()
             try! realm.write {
                 realm.add(articleFav)

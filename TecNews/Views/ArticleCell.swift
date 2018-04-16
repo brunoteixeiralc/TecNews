@@ -59,6 +59,29 @@ class ArticleCell: UITableViewCell {
     snippetLabel.text = article.snippet
     
   }
+    
+  func render(article: RealmArticle, using formatter: DateFormatter) {
+        
+        if let image = article.image{
+            self.bannerView.image = image
+        }else if let imageURL = article.imageURL{
+            if(URLValid(urlString: imageURL)){
+                downloadBanner(from: URL(string:imageURL)!)
+            }
+        }else{
+            self.bannerView.image = UIImage(named:"image")
+        }
+        
+        if let published = article.published {
+            publishedLabel.text = formatter.string(from: published)
+        } else {
+            publishedLabel.text = nil
+        }
+        titleLabel.text = article.title
+        snippetLabel.text = article.snippet
+        
+    }
+    
   
   override func prepareForReuse() {
     super.prepareForReuse()

@@ -16,4 +16,6 @@ class RealmArticle: Object{
     @objc dynamic var sourceURL: String? = nil
     @objc dynamic var imageURL: String? = nil
     @objc dynamic var published: Date? = nil
+    
+    var image: UIImage? = nil
 }
