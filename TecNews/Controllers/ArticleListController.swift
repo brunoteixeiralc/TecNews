@@ -29,6 +29,7 @@
  */
 
 import UIKit
+import RealmSwift
 
 class ArticleListController: UITableViewController {
   
@@ -142,19 +143,32 @@ extension ArticleListController {
             completionHandler(true)
         }
         
-//        let favorite = UIContextualAction(style: .normal, title: "") { [weak self] (action, view, completionHandler) in
-//            guard let `self` = self else{
-//                completionHandler(false)
-//                return
-//            }
-//            completionHandler(true)
-//        }
+        let favorite = UIContextualAction(style: .normal, title: "") { [weak self] (action, view, completionHandler) in
+            guard let `self` = self else{
+                completionHandler(false)
+                return
+            }
+            
+            let articleFav = RealmArticle(value: ["author":article.author as! String ?? nil ,
+                                                  "title":article.title as! String ?? nil,
+                                                  "snippet":article.snippet as! String  ?? nil,
+                                                  "sourceURL":article.sourceURL.absoluteString,
+                                                  "imageURL":article.imageURL as! String ?? nil,
+                                                  "published":article.published as! Date ?? nil])
+            let realm = try! Realm()
+            try! realm.write {
+                realm.add(articleFav)
+            }
+            
+            completionHandler(true)
+        }
         
        shareAction.backgroundColor = #colorLiteral(red: 0.1725490196, green: 0.2431372549, blue: 0.3137254902, alpha: 1)
        shareAction.image = UIImage(named: "share")
-//       favorite.image = UIImage(named: "favorite")
+       favorite.backgroundColor = UIColor.lightGray
+       favorite.image = UIImage(named: "favorite")
        
-       let configuration = UISwipeActionsConfiguration(actions: [shareAction])
+       let configuration = UISwipeActionsConfiguration(actions: [favorite,shareAction])
        return configuration
         
     }

@@ -26,6 +26,7 @@
 		F4DBE37D2059F676006A42F7 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DBE37C2059F676006A42F7 /* SnapshotHelper.swift */; };
 		F4F15670207D618100387C93 /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = F4F1566F207D618000387C93 /* empty.json */; };
 		F4F15672207E6E1D00387C93 /* BookmarkListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F15671207E6E1D00387C93 /* BookmarkListController.swift */; };
+		F4F1567420851B8C00387C93 /* RealmArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F1567320851B8C00387C93 /* RealmArticle.swift */; };
 		F4F9364820597CDC00EAB800 /* TecNewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9364720597CDC00EAB800 /* TecNewsUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		F4DBE37C2059F676006A42F7 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		F4F1566F207D618000387C93 /* empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty.json; sourceTree = "<group>"; };
 		F4F15671207E6E1D00387C93 /* BookmarkListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkListController.swift; sourceTree = "<group>"; };
+		F4F1567320851B8C00387C93 /* RealmArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmArticle.swift; sourceTree = "<group>"; };
 		F4F9364520597CDC00EAB800 /* TecNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TecNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F9364720597CDC00EAB800 /* TecNewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TecNewsUITests.swift; sourceTree = "<group>"; };
 		F4F9364920597CDC00EAB800 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			children = (
 				7B49502A1F3B49FD00C5133B /* Article.swift */,
 				7B4950281F3B49E900C5133B /* Source.swift */,
+				F4F1567320851B8C00387C93 /* RealmArticle.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -340,10 +343,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TecNews/Pods-TecNews-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +407,7 @@
 				7BBBCD901F3C4F9F006D87F7 /* ArticleCell.swift in Sources */,
 				F497F6BF203632C100D251D5 /* LaunchViewController.swift in Sources */,
 				F497F6CF203BBC8200D251D5 /* Utils.swift in Sources */,
+				F4F1567420851B8C00387C93 /* RealmArticle.swift in Sources */,
 				7B4950341F3B52FE00C5133B /* SourceCell.swift in Sources */,
 				7BBBCD8E1F3C4EF5006D87F7 /* String.swift in Sources */,
 				7B49502E1F3B4A7300C5133B /* NewsAPI.swift in Sources */,

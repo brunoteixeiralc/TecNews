@@ -14,10 +14,12 @@ class BookmarkListController: UIViewController {
     @IBOutlet weak var tableview:UITableView!
     
     private let formatter = DateFormatter()
+    let animationView = LOTAnimationView(name: "empty")
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        
+
+        animationView.removeFromSuperview()
         tableview.isHidden = true
         tabBarController?.title = "Let's read now. Choose an article."
         emptyBookmark()
@@ -25,14 +27,12 @@ class BookmarkListController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         formatter.dateFormat = "MMM d, h:mm a"
         
     }
     
     func emptyBookmark(){
-        
-        let animationView = LOTAnimationView(name: "empty")
+    
         animationView.contentMode = .scaleAspectFill
         animationView.frame = CGRect(x: self.view.frame.maxX, y: self.view.frame.maxY, width: self.view.frame.width, height: 350)
         animationView.center =  self.view.center
