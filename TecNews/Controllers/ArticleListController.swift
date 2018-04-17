@@ -30,10 +30,12 @@
 
 import UIKit
 import RealmSwift
+import SafariServices
 
 class ArticleListController: UITableViewController {
   
   var source: Source?
+  var dismissSF:Bool = false
   private var token: NSKeyValueObservation?
   private let formatter = DateFormatter()
   private var task: URLSessionDataTask?
@@ -67,22 +69,23 @@ class ArticleListController: UITableViewController {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     
-    showDialog(in: self)
-    guard let source = source else { return }
-    token = NewsAPI.service.observe(\.articles) { _, _ in
-      DispatchQueue.main.async {
-        self.tableView.reloadData()
-        dismissDialog(in: self)
-      }
+    if !dismissSF{
+        showDialog(in: self)
+        guard let source = source else { return }
+        token = NewsAPI.service.observe(\.articles) { _, _ in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                dismissDialog(in: self)
+            }
+        }
+        NewsAPI.service.fetchArticles(for: source)
     }
-    NewsAPI.service.fetchArticles(for: source)
-
   }
   
   override func viewDidDisappear(_ animated: Bool) {
     super.viewDidDisappear(animated)
     token?.invalidate()
-    NewsAPI.service.resetArticles()
+    
   }
     
    @objc func searchArticleRC(){
@@ -123,7 +126,14 @@ extension ArticleListController {
    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     if let url = URL(string: NewsAPI.service.articles[indexPath.row].sourceURL.absoluteString) {
-           UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            var svc: SFSafariViewController?
+            if #available(iOS 11.0, *) {
+                svc = SFSafariViewController(url: url)
+            } else {
+                svc = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+            }
+        svc?.delegate = self
+        self.present(svc!, animated: true, completion: nil)
         }
     }
     
@@ -144,7 +154,7 @@ extension ArticleListController {
         }
         
         let favorite = UIContextualAction(style: .normal, title: "") { [weak self] (action, view, completionHandler) in
-            guard let `self` = self else{
+            guard self != nil else{
                 completionHandler(false)
                 return
             }
@@ -243,5 +253,13 @@ extension ArticleListController: UITableViewDataSourcePrefetching {
     
     func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
         indexPaths.forEach { self.cancelDownloadBanner(forItemAtIndex: $0.row) }
+    }
+}
+
+extension ArticleListController: SFSafariViewControllerDelegate{
+    
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        dismissSF = true
+        controller.dismiss(animated: true, completion: nil)
     }
 }

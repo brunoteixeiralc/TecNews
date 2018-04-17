@@ -97,4 +97,8 @@ extension SourceListController {
     return cell
   }
     
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    NewsAPI.service.resetArticles()
+  }
+    
 }

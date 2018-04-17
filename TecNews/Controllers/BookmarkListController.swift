@@ -9,6 +9,7 @@
 import UIKit
 import Lottie
 import RealmSwift
+import SafariServices
 
 class BookmarkListController: UIViewController {
 
@@ -94,7 +95,13 @@ extension BookmarkListController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if let url = URL(string: articles![indexPath.row].sourceURL!) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            var svc: SFSafariViewController?
+            if #available(iOS 11.0, *) {
+                svc = SFSafariViewController(url: url)
+            } else {
+                svc = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+            }
+            self.present(svc!, animated: true, completion: nil)
         }
     }
     
