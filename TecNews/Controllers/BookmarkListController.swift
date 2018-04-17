@@ -33,7 +33,6 @@ class BookmarkListController: UIViewController {
     }
     
     func emptyBookmark(){
-    
         animationView.removeFromSuperview()
         animationView.contentMode = .scaleAspectFill
         animationView.frame = CGRect(x: self.view.frame.maxX, y: self.view.frame.maxY, width: self.view.frame.width, height: 350)
