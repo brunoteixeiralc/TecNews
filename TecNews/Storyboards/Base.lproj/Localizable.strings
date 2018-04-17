@@ -16,3 +16,6 @@
 
 /* Localized kind: source_title */
 "source_title" = "Choose one source";
+
+/* Localized kind: add_bookmark */
+"add_bookmark" = "Add";

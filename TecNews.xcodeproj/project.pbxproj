@@ -22,6 +22,7 @@
 		F497F6BF203632C100D251D5 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F497F6BE203632C100D251D5 /* LaunchViewController.swift */; };
 		F497F6C8203B9D6000D251D5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F497F6CA203B9D6000D251D5 /* Localizable.strings */; };
 		F497F6CF203BBC8200D251D5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F497F6CE203BBC8200D251D5 /* Utils.swift */; };
+		F4D937FB208584D300F9E052 /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D937FA208584D300F9E052 /* HudView.swift */; };
 		F4DBE37B2059EEA9006A42F7 /* launchScreen.json in Resources */ = {isa = PBXBuildFile; fileRef = F4DBE37A2059EEA9006A42F7 /* launchScreen.json */; };
 		F4DBE37D2059F676006A42F7 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DBE37C2059F676006A42F7 /* SnapshotHelper.swift */; };
 		F4F15670207D618100387C93 /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = F4F1566F207D618000387C93 /* empty.json */; };
@@ -64,6 +65,7 @@
 		F497F6CC203B9D6600D251D5 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F497F6CD203B9D8B00D251D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F497F6CE203BBC8200D251D5 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		F4D937FA208584D300F9E052 /* HudView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HudView.swift; path = ../../../meuslugares/meuslugares/utils/HudView.swift; sourceTree = "<group>"; };
 		F4DBE37A2059EEA9006A42F7 /* launchScreen.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = launchScreen.json; sourceTree = "<group>"; };
 		F4DBE37C2059F676006A42F7 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		F4F1566F207D618000387C93 /* empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty.json; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				7B4950121F3B478800C5133B /* AppDelegate.swift */,
+				F4D937FA208584D300F9E052 /* HudView.swift */,
 				F497F6CE203BBC8200D251D5 /* Utils.swift */,
 				7B49501E1F3B478800C5133B /* Info.plist */,
 				F4DBE37A2059EEA9006A42F7 /* launchScreen.json */,
@@ -410,6 +413,7 @@
 				F4F1567420851B8C00387C93 /* RealmArticle.swift in Sources */,
 				7B4950341F3B52FE00C5133B /* SourceCell.swift in Sources */,
 				7BBBCD8E1F3C4EF5006D87F7 /* String.swift in Sources */,
+				F4D937FB208584D300F9E052 /* HudView.swift in Sources */,
 				7B49502E1F3B4A7300C5133B /* NewsAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,7 +493,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -549,7 +553,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -577,7 +581,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8UW672R5KC;
 				INFOPLIST_FILE = /Users/brunolemgruber/XcodeProjects/TecNews/TecNews/Other/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -598,7 +602,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8UW672R5KC;
 				INFOPLIST_FILE = /Users/brunolemgruber/XcodeProjects/TecNews/TecNews/Other/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

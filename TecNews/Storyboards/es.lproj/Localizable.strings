@@ -17,3 +17,6 @@
 
 /* Localized kind: source_title */
 "source_title" = "Elija una fuente";
+
+/* Localized kind: add_bookmark */
+"add_bookmark" = "Sumado";

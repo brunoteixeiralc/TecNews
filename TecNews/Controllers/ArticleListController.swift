@@ -168,6 +168,13 @@ extension ArticleListController {
             let realm = try! Realm()
             try! realm.write {
                 realm.add(articleFav)
+                
+                let hudView = HudView.hud(inView: (self?.navigationController?.view)!, animated: true)
+                hudView.text = NSLocalizedString("add_bookmark", comment: "Localized kind: add_bookmark")
+                let delayInSeconds = 1.0
+                DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds) {
+                    hudView.hide()
+                }
             }
             
             completionHandler(true)
