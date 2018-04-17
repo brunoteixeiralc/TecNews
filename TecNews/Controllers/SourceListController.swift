@@ -39,7 +39,7 @@ class SourceListController: UITableViewController {
      super.viewWillAppear(true)
      self.navigationController?.isNavigationBarHidden = false
      self.tabBarController?.navigationItem.setHidesBackButton(true, animated: false)
-     self.tabBarController?.title = "Choose one source"
+     self.tabBarController?.title = NSLocalizedString("source_title", comment: "Localized kind: source_title")
   }
   
   override func viewDidLoad() {

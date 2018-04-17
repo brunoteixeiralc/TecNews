@@ -23,7 +23,7 @@ class BookmarkListController: UIViewController {
         super.viewDidAppear(true)
         
         searchArticles()
-        tabBarController?.title = "Let's read now. Choose an article."
+        tabBarController?.title = NSLocalizedString("bookmark_title", comment: "Localized kind: bookmark_title")
     }
 
     override func viewDidLoad() {
@@ -47,6 +47,11 @@ class BookmarkListController: UIViewController {
         try! realm.write {
             realm.delete(article)
             tableview.reloadData()
+            
+            if articles?.count == 0{
+                emptyBookmark()
+                tableview.isHidden = true
+            }
         }
     }
     
@@ -82,7 +87,6 @@ extension BookmarkListController: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleCell
-        
         cell.render(article: articles![indexPath.row], using: formatter)
         
         return cell
@@ -102,6 +106,7 @@ extension BookmarkListController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete{
             deleteArticleRealm(article: articles![indexPath.row])
+            
         }
     }
 }

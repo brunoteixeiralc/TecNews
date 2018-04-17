@@ -11,3 +11,9 @@
 
 /* Localized kind: Loading */
 "loading" = "Carregando...";
+
+/* Localized kind: bookmark_title */
+"bookmark_title" = "Vamos ler agora.Escolha um artigo";
+
+/* Localized kind: source_title */
+"source_title" = "Escolha uma fonte";

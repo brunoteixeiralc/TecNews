@@ -12,19 +12,23 @@
 "VtG-7S-q0e.title" = "Fontes";
 
 /* Class = "UILabel"; text = "Published"; ObjectID = "ZNM-tU-Ehr"; */
-"ZNM-tU-Ehr.text" = "Published";
+"ZNM-tU-Ehr.text" = "Publicado";
 
 /* Class = "UILabel"; text = "Snippet"; ObjectID = "d38-rz-nhv"; */
-"d38-rz-nhv.text" = "Snippet";
+"d38-rz-nhv.text" = "Descrição";
 
 /* Class = "UILabel"; text = "Category"; ObjectID = "hS6-0X-TLR"; */
-"hS6-0X-TLR.text" = "Category";
+"hS6-0X-TLR.text" = "Categoria";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "mlW-9Y-Of0"; */
-"mlW-9Y-Of0.text" = "Title";
+"mlW-9Y-Of0.text" = "Título";
 
 /* Class = "UILabel"; text = "Name"; ObjectID = "p99-ZB-bi3"; */
-"p99-ZB-bi3.text" = "Name";
+"p99-ZB-bi3.text" = "Nome";
 
 /* Class = "UIBarButtonItem"; title = "Sources"; ObjectID = "wfQ-07-PWN"; */
 "wfQ-07-PWN.title" = "Fontes";
+
+"Cta-SM-CMa.title" = "Notícias";
+
+"weK-FJ-ZOl.title" = "Favoritos";
