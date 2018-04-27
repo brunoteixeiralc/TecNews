@@ -113,6 +113,7 @@ extension BookmarkListController: UITableViewDelegate,UITableViewDataSource {
         if editingStyle == UITableViewCellEditingStyle.delete{
             deleteArticleRealm(article: articles![indexPath.row])
             
+            (self.navigationController?.childViewControllers[1] as! TabBarController).badgeBookmark()
         }
     }
 }

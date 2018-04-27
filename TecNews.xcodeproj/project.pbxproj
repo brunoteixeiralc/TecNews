@@ -19,6 +19,7 @@
 		7BBBCD8E1F3C4EF5006D87F7 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBBCD8D1F3C4EF5006D87F7 /* String.swift */; };
 		7BBBCD901F3C4F9F006D87F7 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBBCD8F1F3C4F9F006D87F7 /* ArticleCell.swift */; };
 		D0A327ACE27ED46B4E99E167 /* Pods_TecNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CFB9382F89D1B4CA9B20687 /* Pods_TecNews.framework */; };
+		F45D6D7B2093B5B20039034A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45D6D7A2093B5B20039034A /* TabBarController.swift */; };
 		F497F6BF203632C100D251D5 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F497F6BE203632C100D251D5 /* LaunchViewController.swift */; };
 		F497F6C8203B9D6000D251D5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F497F6CA203B9D6000D251D5 /* Localizable.strings */; };
 		F497F6CF203BBC8200D251D5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F497F6CE203BBC8200D251D5 /* Utils.swift */; };
@@ -58,6 +59,7 @@
 		7BBBCD8D1F3C4EF5006D87F7 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		7BBBCD8F1F3C4F9F006D87F7 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		98BE9F306ECCEB47DFF35A40 /* Pods-TecNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TecNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TecNews/Pods-TecNews.debug.xcconfig"; sourceTree = "<group>"; };
+		F45D6D7A2093B5B20039034A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		F497F6BE203632C100D251D5 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		F497F6C6203B9D2A00D251D5 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		F497F6C7203B9D3900D251D5 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				7B4950301F3B4D4B00C5133B /* SourceListController.swift */,
 				F497F6BE203632C100D251D5 /* LaunchViewController.swift */,
 				F4F15671207E6E1D00387C93 /* BookmarkListController.swift */,
+				F45D6D7A2093B5B20039034A /* TabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -245,7 +248,6 @@
 				7B49500C1F3B478800C5133B /* Frameworks */,
 				7B49500D1F3B478800C5133B /* Resources */,
 				74E58F665008E03A03BC2897 /* [CP] Embed Pods Frameworks */,
-				7E000E6A46D54C4A10395DE3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -379,21 +381,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7E000E6A46D54C4A10395DE3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TecNews/Pods-TecNews-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -404,6 +391,7 @@
 				7B4950291F3B49E900C5133B /* Source.swift in Sources */,
 				F4F15672207E6E1D00387C93 /* BookmarkListController.swift in Sources */,
 				7B4950131F3B478800C5133B /* AppDelegate.swift in Sources */,
+				F45D6D7B2093B5B20039034A /* TabBarController.swift in Sources */,
 				7B4950361F3B59B500C5133B /* ArticleListController.swift in Sources */,
 				7B4950311F3B4D4B00C5133B /* SourceListController.swift in Sources */,
 				7B49502B1F3B49FD00C5133B /* Article.swift in Sources */,

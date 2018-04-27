@@ -204,7 +204,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="3FO-c9-uv8">
             <objects>
-                <tabBarController id="GPX-4B-rEa" sceneMemberID="viewController">
+                <tabBarController id="GPX-4B-rEa" customClass="TabBarController" customModule="TecNews" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="INP-FU-gzm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

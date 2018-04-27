@@ -39,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     UINavigationBar.appearance().barTintColor = #colorLiteral(red: 0.1725490196, green: 0.2431372549, blue: 0.3137254902, alpha: 1)
     UINavigationBar.appearance().tintColor = .white
     UINavigationBar.appearance().barStyle = .black
+    
     return true
   }
 }

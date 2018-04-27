@@ -34,6 +34,7 @@ import SafariServices
 
 class ArticleListController: UITableViewController {
   
+  var articles:Results<RealmArticle>?
   var source: Source?
   var dismissSF:Bool = false
   private var token: NSKeyValueObservation?
@@ -169,6 +170,8 @@ extension ArticleListController {
             try! realm.write {
                 realm.add(articleFav)
                 
+                (self?.navigationController?.childViewControllers[1] as! TabBarController).badgeBookmark()
+
                 let hudView = HudView.hud(inView: (self?.navigationController?.view)!, animated: true)
                 hudView.text = NSLocalizedString("add_bookmark", comment: "Localized kind: add_bookmark")
                 let delayInSeconds = 1.0
