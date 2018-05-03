@@ -35,6 +35,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
+  enum Shortcut: String {
+        case bookmarks = "bookmarks"
+    }
+
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     UINavigationBar.appearance().barTintColor = #colorLiteral(red: 0.1725490196, green: 0.2431372549, blue: 0.3137254902, alpha: 1)
     UINavigationBar.appearance().tintColor = .white
@@ -42,5 +46,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     return true
   }
+    
+   func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        completionHandler(handleQuickAction(shortcutItem: shortcutItem))
+    }
+}
+
+extension AppDelegate{
+    
+    func handleQuickAction(shortcutItem: UIApplicationShortcutItem) -> Bool {
+        
+        var quickActionHandled = false
+        
+        let type = shortcutItem.type.components(separatedBy: ".").last!
+        if let shortcutType = Shortcut.init(rawValue: type) {
+            switch shortcutType {
+            case .bookmarks:
+                quickActionHandled = true
+                
+                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let initViewController  = storyBoard.instantiateViewController(withIdentifier: "nvc")
+                initViewController.performSegue(withIdentifier: "shortcutbookmarks", sender: nil)
+            }
+        }
+        return quickActionHandled
+    }
 }
 

@@ -10,12 +10,6 @@ DEPENDENCIES:
   - lottie-ios
   - RealmSwift
 
-SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - lottie-ios
-    - Realm
-    - RealmSwift
-
 SPEC CHECKSUMS:
   lottie-ios: 836cdbba92f62f3c6a00e37a4ce485321fe317cf
   Realm: 9527c7baa2260f3a3aad6823d2d71cafff9b046b
@@ -23,4 +17,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 3dd6679f1919ce091c7c997b6c3c1f81d3cf87a9
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.4.0
