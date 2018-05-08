@@ -46,6 +46,9 @@ class ArticleListController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    if UIApplication.shared.keyWindow?.traitCollection.forceTouchCapability == UIForceTouchCapability.available
+    {registerForPreviewing(with: self, sourceView: view)}
+    
     formatter.dateFormat = "MMM d, h:mm a"
     tableView.prefetchDataSource = self
     
@@ -192,6 +195,7 @@ extension ArticleListController {
        return configuration
         
     }
+    
 }
 
 extension ArticleListController{
@@ -271,5 +275,27 @@ extension ArticleListController: SFSafariViewControllerDelegate{
     func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
         dismissSF = true
         controller.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension ArticleListController: UIViewControllerPreviewingDelegate{
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = tableView?.indexPathForRow(at: location) else { return nil }
+        
+        var svc: SFSafariViewController?
+        if let url = URL(string: NewsAPI.service.articles[indexPath.row].sourceURL.absoluteString) {
+            if #available(iOS 11.0, *) {
+                svc = SFSafariViewController(url: url)
+            } else {
+                svc = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+            }
+        }
+       return svc
+    }
+    
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        navigationController?.pushViewController(viewControllerToCommit, animated: true)
     }
 }
