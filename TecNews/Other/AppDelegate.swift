@@ -34,6 +34,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
+  var isShortcut = false
 
   enum Shortcut: String {
         case bookmarks = "bookmarks"
@@ -44,7 +45,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     UINavigationBar.appearance().tintColor = .white
     UINavigationBar.appearance().barStyle = .black
     
-    return true
+    var isLaunchedFromQuickAction = false
+    
+    if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem{
+        isLaunchedFromQuickAction = true
+        handleQuickAction(shortcutItem: shortcutItem)
+    }
+    
+    return !isLaunchedFromQuickAction
   }
     
    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
@@ -63,10 +71,8 @@ extension AppDelegate{
             switch shortcutType {
             case .bookmarks:
                 quickActionHandled = true
-                
-                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let initViewController  = storyBoard.instantiateViewController(withIdentifier: "nvc")
-                initViewController.performSegue(withIdentifier: "shortcutbookmarks", sender: nil)
+                self.window?.rootViewController?.performSegue(withIdentifier: "bookmarks", sender: nil)
+                isShortcut = true
             }
         }
         return quickActionHandled

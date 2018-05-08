@@ -13,10 +13,16 @@ class TabBarController: UITabBarController {
 
     var articles:Results<RealmArticle>?
     let realm = try! Realm()
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
         badgeBookmark()
+        if (appDelegate.isShortcut){
+            selectedIndex = 1
+        }else{
+            selectedIndex = 0
+        }
     }
     
     func badgeBookmark(){

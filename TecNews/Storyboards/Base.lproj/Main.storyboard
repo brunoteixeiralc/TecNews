@@ -176,12 +176,12 @@
                     </navigationBar>
                     <connections>
                         <segue destination="dck-Kv-Ly9" kind="relationship" relationship="rootViewController" id="VXp-te-RsH"/>
-                        <segue destination="GPX-4B-rEa" kind="show" identifier="shortcutbookmarks" id="th3-bt-rsj"/>
+                        <segue destination="GPX-4B-rEa" kind="show" identifier="bookmarks" id="tUd-wm-bM4"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wvd-gZ-Q2k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1113" y="169"/>
+            <point key="canvasLocation" x="-1230" y="169"/>
         </scene>
         <!--Launch View Controller-->
         <scene sceneID="ObZ-YE-3Pk">
@@ -312,7 +312,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T0Z-50-9ij" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1204" y="-618.44077961019491"/>
+            <point key="canvasLocation" x="1326" y="-463"/>
         </scene>
     </scenes>
     <resources>
@@ -324,6 +324,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="th3-bt-rsj"/>
+        <segue reference="tUd-wm-bM4"/>
     </inferredMetricsTieBreakers>
 </document>
