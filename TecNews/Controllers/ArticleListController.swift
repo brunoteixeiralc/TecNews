@@ -29,7 +29,6 @@
  */
 
 import UIKit
-import RealmSwift
 import SafariServices
 
 class ArticleListController: UITableViewController {
