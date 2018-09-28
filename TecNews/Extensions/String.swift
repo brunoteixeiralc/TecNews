@@ -31,6 +31,7 @@
 import Foundation
 
 extension String {
+  
   func deletingCharacters(in characters: CharacterSet) -> String {
     return self.components(separatedBy: characters).filter { !$0.isEmpty }.joined(separator: " ")
   }

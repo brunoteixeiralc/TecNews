@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 class TabBarController: UITabBarController {
 
@@ -26,6 +25,7 @@ class TabBarController: UITabBarController {
     }
     
     func badgeBookmark(){
+        //MARK: Mudar para CoreData
         articles = realm.objects(RealmArticle.self)
         if let articlesRealm = articles{
             if articlesRealm.count > 0{

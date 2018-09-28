@@ -8,7 +8,6 @@
 
 import UIKit
 import Lottie
-import RealmSwift
 import SafariServices
 
 class BookmarkListController: UIViewController {
@@ -22,7 +21,8 @@ class BookmarkListController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        
+      
+        //MARK: Mudar para CoreData
         searchArticles()
         tabBarController?.title = NSLocalizedString("bookmark_title", comment: "Localized kind: bookmark_title")
     }

@@ -169,6 +169,8 @@ extension ArticleListController {
                                                   "sourceURL":article.sourceURL.absoluteString,
                                                   "imageURL":article.imageURL,
                                                   "published":article.published])
+          
+          //MARK: Mudar para CoreData
             let realm = try! Realm()
             try! realm.write {
                 realm.add(articleFav)
