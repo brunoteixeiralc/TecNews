@@ -49,12 +49,13 @@
 		F4D72AF2215DDDBD00906061 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4D72AD9215DDDBD00906061 /* Assets.xcassets */; };
 		F4D72AF3215DDDBD00906061 /* NewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D72ADB215DDDBD00906061 /* NewsAPI.swift */; };
 		F4D72AF5215DDDE100906061 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F4D72AF4215DDDE100906061 /* .gitignore */; };
+		F4D72AF9215DDE4500906061 /* TecNews+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D72AF7215DDE4400906061 /* TecNews+CoreDataClass.swift */; };
+		F4D72AFA215DDE4500906061 /* TecNews+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D72AF8215DDE4400906061 /* TecNews+CoreDataProperties.swift */; };
 		F4D937FB208584D300F9E052 /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D937FA208584D300F9E052 /* HudView.swift */; };
 		F4DBE37B2059EEA9006A42F7 /* launchScreen.json in Resources */ = {isa = PBXBuildFile; fileRef = F4DBE37A2059EEA9006A42F7 /* launchScreen.json */; };
 		F4DBE37D2059F676006A42F7 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DBE37C2059F676006A42F7 /* SnapshotHelper.swift */; };
 		F4F15670207D618100387C93 /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = F4F1566F207D618000387C93 /* empty.json */; };
 		F4F15672207E6E1D00387C93 /* BookmarkListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F15671207E6E1D00387C93 /* BookmarkListController.swift */; };
-		F4F1567420851B8C00387C93 /* RealmArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F1567320851B8C00387C93 /* RealmArticle.swift */; };
 		F4F9364820597CDC00EAB800 /* TecNewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9364720597CDC00EAB800 /* TecNewsUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -122,12 +123,13 @@
 		F4D72AD9215DDDBD00906061 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4D72ADB215DDDBD00906061 /* NewsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsAPI.swift; sourceTree = "<group>"; };
 		F4D72AF4215DDDE100906061 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
+		F4D72AF7215DDE4400906061 /* TecNews+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TecNews+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F4D72AF8215DDE4400906061 /* TecNews+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TecNews+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F4D937FA208584D300F9E052 /* HudView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HudView.swift; path = ../../../meuslugares/meuslugares/utils/HudView.swift; sourceTree = "<group>"; };
 		F4DBE37A2059EEA9006A42F7 /* launchScreen.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = launchScreen.json; sourceTree = "<group>"; };
 		F4DBE37C2059F676006A42F7 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		F4F1566F207D618000387C93 /* empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty.json; sourceTree = "<group>"; };
 		F4F15671207E6E1D00387C93 /* BookmarkListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkListController.swift; sourceTree = "<group>"; };
-		F4F1567320851B8C00387C93 /* RealmArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmArticle.swift; sourceTree = "<group>"; };
 		F4F9364520597CDC00EAB800 /* TecNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TecNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F9364720597CDC00EAB800 /* TecNewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TecNewsUITests.swift; sourceTree = "<group>"; };
 		F4F9364920597CDC00EAB800 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -185,7 +187,7 @@
 				7B49502C1F3B4A5500C5133B /* Services */,
 				7B4950261F3B48FA00C5133B /* Storyboards */,
 				7B4950321F3B52E500C5133B /* Views */,
-				F4D72AB0215DDCD600906061 /* TecNews.xcdatamodeld */,
+				F4D72AF6215DDE2300906061 /* CoreData */,
 			);
 			path = TecNews;
 			sourceTree = "<group>";
@@ -224,7 +226,6 @@
 			children = (
 				7B49502A1F3B49FD00C5133B /* Article.swift */,
 				7B4950281F3B49E900C5133B /* Source.swift */,
-				F4F1567320851B8C00387C93 /* RealmArticle.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -393,6 +394,16 @@
 				F4D72ADB215DDDBD00906061 /* NewsAPI.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		F4D72AF6215DDE2300906061 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F4D72AF7215DDE4400906061 /* TecNews+CoreDataClass.swift */,
+				F4D72AF8215DDE4400906061 /* TecNews+CoreDataProperties.swift */,
+				F4D72AB0215DDCD600906061 /* TecNews.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		F4F9364620597CDC00EAB800 /* TecNewsUITests */ = {
@@ -597,11 +608,12 @@
 				7B49502B1F3B49FD00C5133B /* Article.swift in Sources */,
 				7BBBCD901F3C4F9F006D87F7 /* ArticleCell.swift in Sources */,
 				F497F6BF203632C100D251D5 /* LaunchViewController.swift in Sources */,
+				F4D72AF9215DDE4500906061 /* TecNews+CoreDataClass.swift in Sources */,
 				F497F6CF203BBC8200D251D5 /* Utils.swift in Sources */,
 				F4D72AEE215DDDBD00906061 /* LaunchViewController.swift in Sources */,
 				F4D72AE2215DDDBD00906061 /* Utils.swift in Sources */,
+				F4D72AFA215DDE4500906061 /* TecNews+CoreDataProperties.swift in Sources */,
 				F4D72AE6215DDDBD00906061 /* Article.swift in Sources */,
-				F4F1567420851B8C00387C93 /* RealmArticle.swift in Sources */,
 				F4D72AEF215DDDBD00906061 /* TabBarController.swift in Sources */,
 				F4D72ADF215DDDBD00906061 /* HudView.swift in Sources */,
 				7B4950341F3B52FE00C5133B /* SourceCell.swift in Sources */,

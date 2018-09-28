@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:TecNews+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:TecNews+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:TecNews.xcodeproj">
    </FileRef>
    <FileRef
